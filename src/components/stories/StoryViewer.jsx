@@ -1,0 +1,2 @@
+import React from "react";
+export default function StoryViewer({ story, onClose }) { if (!story) return null; return <div role="dialog" aria-modal="true" className="story-viewer" onClick={onClose}><button type="button" aria-label="Close story" onClick={onClose}>×</button>{story.mediaType === "video" ? <video src={story.mediaUrl} controls autoPlay /> : <img src={story.mediaUrl} alt={`${story.username || "User"} story`} />}</div>; }

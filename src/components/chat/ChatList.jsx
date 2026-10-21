@@ -1,0 +1,2 @@
+import React from "react";
+export default function ChatList({ conversations = [], activeId, onSelect }) { return <aside className="chat-list"><h2>Messages</h2>{conversations.length ? conversations.map(c => <button type="button" key={c.id} aria-current={c.id === activeId ? "true" : undefined} onClick={() => onSelect?.(c.id)}>{c.name || c.username || "Conversation"}</button>) : <p>No conversations yet.</p>}</aside>; }
